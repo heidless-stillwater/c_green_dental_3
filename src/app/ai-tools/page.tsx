@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SymptomCheckerForm from '@/components/ai/SymptomCheckerForm';
 import TreatmentPlannerForm from '@/components/ai/TreatmentPlannerForm';
@@ -5,8 +6,9 @@ import DentalCareTipsForm from '@/components/ai/DentalCareTipsForm';
 import OralHealthAssessmentForm from '@/components/ai/OralHealthAssessmentForm';
 import EmergencyDentalAdvisorForm from '@/components/ai/EmergencyDentalAdvisorForm';
 import SmileDesignPreviewForm from '@/components/ai/SmileDesignPreviewForm';
-import DentalInsuranceHelperForm from '@/components/ai/DentalInsuranceHelperForm'; // Added import
-import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck } from 'lucide-react'; // Added ShieldCheck
+import DentalInsuranceHelperForm from '@/components/ai/DentalInsuranceHelperForm';
+import PostTreatmentCareGuideForm from '@/components/ai/PostTreatmentCareGuideForm'; // Added import
+import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck, BookHeart } from 'lucide-react'; // Added BookHeart
 
 export default function AiToolsPage() {
   return (
@@ -20,7 +22,7 @@ export default function AiToolsPage() {
       </div>
 
       <Tabs defaultValue="symptom-checker" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2 h-auto p-2"> {/* Changed lg:grid-cols-6 to lg:grid-cols-7 */}
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2 h-auto p-2"> {/* Adjusted grid columns for 8 items */}
           <TabsTrigger value="symptom-checker" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Activity className="h-5 w-5 mb-1 sm:mb-0" /> Symptom Checker
           </TabsTrigger>
@@ -39,8 +41,11 @@ export default function AiToolsPage() {
           <TabsTrigger value="smile-design-preview" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Sparkles className="h-5 w-5 mb-1 sm:mb-0" /> Smile Design
           </TabsTrigger>
-          <TabsTrigger value="insurance-helper" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* Added new tab trigger */}
+          <TabsTrigger value="insurance-helper" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <ShieldCheck className="h-5 w-5 mb-1 sm:mb-0" /> Insurance Helper
+          </TabsTrigger>
+          <TabsTrigger value="post-treatment-care" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* Added new tab trigger */}
+            <BookHeart className="h-5 w-5 mb-1 sm:mb-0" /> Post-Treatment Care
           </TabsTrigger>
         </TabsList>
         <TabsContent value="symptom-checker" className="mt-6">
@@ -61,10 +66,14 @@ export default function AiToolsPage() {
         <TabsContent value="smile-design-preview" className="mt-6">
           <SmileDesignPreviewForm />
         </TabsContent>
-        <TabsContent value="insurance-helper" className="mt-6"> {/* Added new tab content */}
+        <TabsContent value="insurance-helper" className="mt-6">
           <DentalInsuranceHelperForm />
+        </TabsContent>
+        <TabsContent value="post-treatment-care" className="mt-6"> {/* Added new tab content */}
+          <PostTreatmentCareGuideForm />
         </TabsContent>
       </Tabs>
     </div>
   );
 }
+
