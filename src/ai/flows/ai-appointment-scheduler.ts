@@ -43,18 +43,18 @@ User's request: {{{userRequest}}}
 Based on this request, please provide the following:
 
 1.  **Confirmation Message**: Start with a friendly and helpful acknowledgment (e.g., "I can help with your appointment request!" or "Okay, let's get your appointment request started.").
-2.  **Parsed Service (`parsedService`)**: Identify the dental service the user is likely requesting.
+2.  **Parsed Service (parsedService)**: Identify the dental service the user is likely requesting.
     *   If a specific service like "cleaning", "check-up", "whitening", "braces consultation", "root canal inquiry", "wisdom tooth problem" is mentioned, use that.
     *   If the user is vague (e.g., "I need an appointment," "I have a toothache," "Something is wrong with my tooth"), infer a general service like "General Consultation," "Dental Check-up," or "Problem Assessment."
     *   If completely unclear, state "Service to be discussed."
-3.  **Parsed Date/Time (`parsedDateTime`)**: Identify any date or time preferences mentioned by the user.
+3.  **Parsed Date/Time (parsedDateTime)**: Identify any date or time preferences mentioned by the user.
     *   Examples: "next Tuesday afternoon", "weekday mornings", "ASAP", "end of July".
     *   If no specific date or time is mentioned, set this to "Flexible" or "To be discussed with our team".
-4.  **Suggested Next Steps (`suggestedNextSteps`)**: Provide clear, step-by-step instructions on how the user should proceed to make a booking.
+4.  **Suggested Next Steps (suggestedNextSteps)**: Provide clear, step-by-step instructions on how the user should proceed to make a booking.
     *   This message MUST guide them to contact the clinic directly.
     *   Example format: "To schedule your [parsedService], please call our office at [PHONE_NUMBER_PLACEHOLDER] or visit our 'Contact Us' page on our website to send a booking request. Our team will then work with you to find a suitable time for your [parsedService], considering your preferences for [parsedDateTime]."
-    *   (The actual phone number will be inserted by the system later, so use the placeholder `[PHONE_NUMBER_PLACEHOLDER]`).
-5.  **Disclaimer (`disclaimer`)**: Include this exact disclaimer: "Please note: This AI tool helps gather your appointment preferences but does not book appointments directly into our system. Final confirmation of your appointment will come from our staff after you contact us using the methods above."
+    *   (The actual phone number will be inserted by the system later, so use the placeholder \`[PHONE_NUMBER_PLACEHOLDER]\`).
+5.  **Disclaimer (disclaimer)**: Include this exact disclaimer: "Please note: This AI tool helps gather your appointment preferences but does not book appointments directly into our system. Final confirmation of your appointment will come from our staff after you contact us using the methods above."
 
 Ensure your tone is professional, friendly, and helpful. Focus on making the next steps clear for the user.
 `,
