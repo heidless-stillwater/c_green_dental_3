@@ -7,8 +7,9 @@ import OralHealthAssessmentForm from '@/components/ai/OralHealthAssessmentForm';
 import EmergencyDentalAdvisorForm from '@/components/ai/EmergencyDentalAdvisorForm';
 import SmileDesignPreviewForm from '@/components/ai/SmileDesignPreviewForm';
 import DentalInsuranceHelperForm from '@/components/ai/DentalInsuranceHelperForm';
-import PostTreatmentCareGuideForm from '@/components/ai/PostTreatmentCareGuideForm'; // Added import
-import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck, BookHeart } from 'lucide-react'; // Added BookHeart
+import PostTreatmentCareGuideForm from '@/components/ai/PostTreatmentCareGuideForm';
+import DentalAnxietySupportForm from '@/components/ai/DentalAnxietySupportForm'; // New import
+import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck, BookHeart, HeartHandshake } from 'lucide-react'; // Added HeartHandshake
 
 export default function AiToolsPage() {
   return (
@@ -22,7 +23,7 @@ export default function AiToolsPage() {
       </div>
 
       <Tabs defaultValue="symptom-checker" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2 h-auto p-2"> {/* Adjusted grid columns for 8 items */}
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2 h-auto p-2"> {/* Will now have 9 items */}
           <TabsTrigger value="symptom-checker" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Activity className="h-5 w-5 mb-1 sm:mb-0" /> Symptom Checker
           </TabsTrigger>
@@ -44,8 +45,11 @@ export default function AiToolsPage() {
           <TabsTrigger value="insurance-helper" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <ShieldCheck className="h-5 w-5 mb-1 sm:mb-0" /> Insurance Helper
           </TabsTrigger>
-          <TabsTrigger value="post-treatment-care" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* Added new tab trigger */}
+          <TabsTrigger value="post-treatment-care" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <BookHeart className="h-5 w-5 mb-1 sm:mb-0" /> Post-Treatment Care
+          </TabsTrigger>
+          <TabsTrigger value="anxiety-support" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* New tab trigger */}
+            <HeartHandshake className="h-5 w-5 mb-1 sm:mb-0" /> Anxiety Support
           </TabsTrigger>
         </TabsList>
         <TabsContent value="symptom-checker" className="mt-6">
@@ -69,11 +73,13 @@ export default function AiToolsPage() {
         <TabsContent value="insurance-helper" className="mt-6">
           <DentalInsuranceHelperForm />
         </TabsContent>
-        <TabsContent value="post-treatment-care" className="mt-6"> {/* Added new tab content */}
+        <TabsContent value="post-treatment-care" className="mt-6">
           <PostTreatmentCareGuideForm />
+        </TabsContent>
+        <TabsContent value="anxiety-support" className="mt-6"> {/* New tab content */}
+          <DentalAnxietySupportForm />
         </TabsContent>
       </Tabs>
     </div>
   );
 }
-
