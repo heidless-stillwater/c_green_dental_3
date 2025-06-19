@@ -1,1 +1,8 @@
-// Flows will be imported for their side effects in this file.
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/ai-emergency-dental-advisor.ts';
+import '@/ai/flows/ai-symptom-checker.ts';
+import '@/ai/flows/ai-treatment-planner.ts';
+import '@/ai/flows/ai-oral-health-assessment.ts';
+import '@/ai/flows/ai-dental-care-tips.ts';
