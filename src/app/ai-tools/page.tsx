@@ -4,7 +4,8 @@ import TreatmentPlannerForm from '@/components/ai/TreatmentPlannerForm';
 import DentalCareTipsForm from '@/components/ai/DentalCareTipsForm';
 import OralHealthAssessmentForm from '@/components/ai/OralHealthAssessmentForm';
 import EmergencyDentalAdvisorForm from '@/components/ai/EmergencyDentalAdvisorForm';
-import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle } from 'lucide-react';
+import SmileDesignPreviewForm from '@/components/ai/SmileDesignPreviewForm'; // Added import
+import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles } from 'lucide-react'; // Added Sparkles
 
 export default function AiToolsPage() {
   return (
@@ -18,7 +19,7 @@ export default function AiToolsPage() {
       </div>
 
       <Tabs defaultValue="symptom-checker" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 h-auto p-2">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 h-auto p-2"> {/* Changed md:grid-cols-5 to lg:grid-cols-6 */}
           <TabsTrigger value="symptom-checker" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Activity className="h-5 w-5 mb-1 sm:mb-0" /> Symptom Checker
           </TabsTrigger>
@@ -33,6 +34,9 @@ export default function AiToolsPage() {
           </TabsTrigger>
           <TabsTrigger value="emergency-advisor" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <AlertTriangle className="h-5 w-5 mb-1 sm:mb-0" /> Emergency Advisor
+          </TabsTrigger>
+          <TabsTrigger value="smile-design-preview" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* Added new tab trigger */}
+            <Sparkles className="h-5 w-5 mb-1 sm:mb-0" /> Smile Design
           </TabsTrigger>
         </TabsList>
         <TabsContent value="symptom-checker" className="mt-6">
@@ -49,6 +53,9 @@ export default function AiToolsPage() {
         </TabsContent>
         <TabsContent value="emergency-advisor" className="mt-6">
           <EmergencyDentalAdvisorForm />
+        </TabsContent>
+        <TabsContent value="smile-design-preview" className="mt-6"> {/* Added new tab content */}
+          <SmileDesignPreviewForm />
         </TabsContent>
       </Tabs>
     </div>
