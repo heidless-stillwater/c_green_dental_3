@@ -11,4 +11,6 @@ import '@/ai/flows/ai-smile-design-preview.ts';
 import '@/ai/flows/ai-dental-insurance-helper.ts';
 import '@/ai/flows/ai-post-treatment-care-guide.ts';
 import '@/ai/flows/ai-dental-anxiety-support.ts';
-import '@/ai/flows/ai-treatment-cost-calculator.ts'; // New flow for cost calculator
+import '@/ai/flows/ai-treatment-cost-calculator.ts';
+import '@/ai/flows/ai-patient-education.ts'; // New flow for patient education
+
