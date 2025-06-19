@@ -10,8 +10,9 @@ import DentalInsuranceHelperForm from '@/components/ai/DentalInsuranceHelperForm
 import PostTreatmentCareGuideForm from '@/components/ai/PostTreatmentCareGuideForm';
 import DentalAnxietySupportForm from '@/components/ai/DentalAnxietySupportForm';
 import TreatmentCostCalculatorForm from '@/components/ai/TreatmentCostCalculatorForm';
-import PatientEducationForm from '@/components/ai/PatientEducationForm'; // New import
-import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck, BookHeart, HeartHandshake, Calculator, BookOpenText } from 'lucide-react'; // Added BookOpenText
+import PatientEducationForm from '@/components/ai/PatientEducationForm';
+import AppointmentSchedulerForm from '@/components/ai/AppointmentSchedulerForm'; // New import
+import { Activity, ClipboardList, Lightbulb, SmilePlus, AlertTriangle, Sparkles, ShieldCheck, BookHeart, HeartHandshake, Calculator, BookOpenText, CalendarPlus } from 'lucide-react'; // Added CalendarPlus
 
 export default function AiToolsPage() {
   return (
@@ -25,7 +26,7 @@ export default function AiToolsPage() {
       </div>
 
       <Tabs defaultValue="symptom-checker" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 h-auto p-2">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 h-auto p-2">
           <TabsTrigger value="symptom-checker" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Activity className="h-5 w-5 mb-1 sm:mb-0" /> Symptom Checker
           </TabsTrigger>
@@ -56,8 +57,11 @@ export default function AiToolsPage() {
           <TabsTrigger value="cost-calculator" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <Calculator className="h-5 w-5 mb-1 sm:mb-0" /> Cost Calculator
           </TabsTrigger>
-          <TabsTrigger value="patient-education" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* New tab trigger */}
+          <TabsTrigger value="patient-education" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md">
             <BookOpenText className="h-5 w-5 mb-1 sm:mb-0" /> Patient Education
+          </TabsTrigger>
+          <TabsTrigger value="appointment-scheduler" className="flex flex-col sm:flex-row items-center gap-2 py-2 text-xs sm:text-sm h-auto data-[state=active]:shadow-md"> {/* New tab trigger */}
+            <CalendarPlus className="h-5 w-5 mb-1 sm:mb-0" /> Appointment AI
           </TabsTrigger>
         </TabsList>
         <TabsContent value="symptom-checker" className="mt-6">
@@ -90,10 +94,14 @@ export default function AiToolsPage() {
         <TabsContent value="cost-calculator" className="mt-6">
           <TreatmentCostCalculatorForm />
         </TabsContent>
-        <TabsContent value="patient-education" className="mt-6"> {/* New tab content */}
+        <TabsContent value="patient-education" className="mt-6">
           <PatientEducationForm />
+        </TabsContent>
+        <TabsContent value="appointment-scheduler" className="mt-6"> {/* New tab content */}
+          <AppointmentSchedulerForm />
         </TabsContent>
       </Tabs>
     </div>
   );
 }
+

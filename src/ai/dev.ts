@@ -12,5 +12,7 @@ import '@/ai/flows/ai-dental-insurance-helper.ts';
 import '@/ai/flows/ai-post-treatment-care-guide.ts';
 import '@/ai/flows/ai-dental-anxiety-support.ts';
 import '@/ai/flows/ai-treatment-cost-calculator.ts';
-import '@/ai/flows/ai-patient-education.ts'; // New flow for patient education
+import '@/ai/flows/ai-patient-education.ts';
+import '@/ai/flows/ai-appointment-scheduler.ts'; // New flow for appointment scheduling AI
+
 
